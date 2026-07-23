@@ -1,51 +1,292 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<title>Alexandria</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet"
-href="{{ url_for('static', filename='css/style.css') }}">
+    <title>
+
+        {% block title %}
+            Alexandria
+        {% endblock %}
+
+    </title>
+
+    <!-- Google Font -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/game.css') }}">
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/mobile.css') }}">
 
 </head>
 
 <body>
 
-<nav>
+<!-- ================================================= -->
+<!-- Reward Popup -->
+<!-- ================================================= -->
 
-<div class="logo">
+<div
+    id="reward-popup"
+    class="reward-popup">
 
-Alexandria
-
-</div>
-
-<div>
-
-<a href="/">Home</a>
-
-<a href="/dashboard">Dashboard</a>
-
-<a href="/onboarding">Get Started</a>
+    +20 XP 🎉
 
 </div>
 
-</nav>
+<!-- ================================================= -->
+<!-- Navigation -->
+<!-- ================================================= -->
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo-area">
+
+            <img
+                src="{{ url_for('static', filename='img/logo.png') }}"
+                class="logo">
+
+            <div>
+
+                <h2>
+
+                    Alexandria
+
+                </h2>
+
+                <small>
+
+                    Evidence-Based Parenting
+
+                </small>
+
+            </div>
+
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+
+            <a href="/dashboard">Dashboard</a>
+
+            <a href="/articles">Articles</a>
+
+            <a href="/child">My Child</a>
+
+            <a href="/milestones">Journey</a>
+
+            <a href="/quiz">Quiz</a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+<!-- ================================================= -->
+<!-- Flash Messages -->
+<!-- ================================================= -->
+
+{% with messages = get_flashed_messages() %}
+
+{% if messages %}
+
+<div class="flash-container">
+
+{% for message in messages %}
+
+<div class="flash-message">
+
+{{ message }}
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endif %}
+
+{% endwith %}
+
+<!-- ================================================= -->
+<!-- Main -->
+<!-- ================================================= -->
+
+<main class="page">
 
 {% block content %}
 
 {% endblock %}
 
+</main>
+
+<!-- ================================================= -->
+<!-- Footer -->
+<!-- ================================================= -->
+
 <footer>
+
+<div class="footer-content">
+
+<div>
+
+<h3>
+
+Alexandria
+
+</h3>
+
+<p>
+
+Helping families grow through trusted,
+evidence-based parenting.
+
+</p>
+
+</div>
+
+<div>
+
+<h4>
+
+Quick Links
+
+</h4>
+
+<ul>
+
+<li>
+
+<a href="/">Home</a>
+
+</li>
+
+<li>
+
+<a href="/dashboard">
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="/articles">
+
+Articles
+
+</a>
+
+</li>
+
+<li>
+
+<a href="/milestones">
+
+Journey
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>
+
+Follow Us
+
+</h4>
+
+<div class="socials">
+
+<a href="#">
+
+Instagram
+
+</a>
+
+<a href="#">
+
+LinkedIn
+
+</a>
+
+<a href="#">
+
+GitHub
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+© 2026 Alexandria
 
 Made with ❤️ for parents.
 
+</div>
+
 </footer>
 
-</body>
+<!-- ================================================= -->
+<!-- Scripts -->
+<!-- ================================================= -->
+
 <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/game.js') }}"></script>
+
+{% block scripts %}
+
+{% endblock %}
+
+</body>
 
 </html>

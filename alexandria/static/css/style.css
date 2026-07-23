@@ -1,133 +1,2517 @@
+/* ==========================================================
+   Alexandria Design System
+   MVP v1.0
+========================================================== */
+
+/* ==========================================================
+   Color Palette
+========================================================== */
+
+:root{
+
+    --primary:#63C8D9;
+    --primary-dark:#45B8CB;
+    --primary-light:#DDF7FA;
+
+    --secondary:#AEE6D8;
+    --secondary-light:#F0FCF8;
+
+    --background:#F7FCFD;
+
+    --surface:#FFFFFF;
+
+    --text:#2F3C48;
+
+    --text-light:#6D7B86;
+
+    --border:#E7EEF2;
+
+    --success:#58C77A;
+
+    --warning:#FFBE55;
+
+    --danger:#F16D6D;
+
+    --shadow:0 12px 30px rgba(0,0,0,.07);
+
+    --shadow-hover:0 18px 40px rgba(0,0,0,.10);
+
+    --radius:22px;
+
+    --transition:.25s ease;
+
+}
+
+
+/* ==========================================================
+   Reset
+========================================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+/* ==========================================================
+   Body
+========================================================== */
+
 body{
-font-family:Arial,sans-serif;
-margin:0;
-background:#F7FCFD;
-color:#2F3C48;
+
+    font-family:'Inter',sans-serif;
+
+    background:var(--background);
+
+    color:var(--text);
+
+    line-height:1.65;
+
+    min-height:100vh;
+
 }
 
-nav{
-display:flex;
-justify-content:space-between;
-padding:20px 40px;
-background:white;
-box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+/* ==========================================================
+   Links
+========================================================== */
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
 }
 
-nav a{
-margin-left:20px;
-text-decoration:none;
-color:#2F3C48;
+
+/* ==========================================================
+   Lists
+========================================================== */
+
+ul{
+
+    list-style:none;
+
 }
 
-.hero{
-padding:100px;
-text-align:center;
+
+/* ==========================================================
+   Images
+========================================================== */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
 }
 
-.button{
-background:#63C8D9;
-padding:15px 30px;
-border-radius:12px;
-color:white;
-text-decoration:none;
-display:inline-block;
-margin-top:25px;
+
+/* ==========================================================
+   Containers
+========================================================== */
+
+.page{
+
+    max-width:1250px;
+
+    margin:auto;
+
+    padding:40px 30px 80px;
+
 }
 
-.card{
-background:white;
-margin:20px;
-padding:25px;
-border-radius:18px;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+.container{
+
+    max-width:1200px;
+
+    margin:auto;
+
 }
+
+
+/* ==========================================================
+   Typography
+========================================================== */
+
+h1{
+
+    font-size:3rem;
+
+    font-weight:800;
+
+    margin-bottom:18px;
+
+}
+
+h2{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    margin-bottom:16px;
+
+}
+
+h3{
+
+    font-size:1.25rem;
+
+    font-weight:600;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    color:var(--text-light);
+
+    margin-bottom:16px;
+
+}
+
+small{
+
+    color:var(--text-light);
+
+}
+
+
+/* ==========================================================
+   Navigation
+========================================================== */
+
+header{
+
+    width:100%;
+
+    background:white;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    box-shadow:0 4px 20px rgba(0,0,0,.05);
+
+}
+
+
+.navbar{
+
+    max-width:1250px;
+
+    margin:auto;
+
+    padding:18px 25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+.logo-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+.logo{
+
+    width:60px;
+
+    height:60px;
+
+}
+
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:28px;
+
+}
+
+
+.nav-links a{
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+    color:var(--text);
+
+}
+
+
+.nav-links a:hover{
+
+    color:var(--primary);
+
+}
+
+
+/* ==========================================================
+   Hero Card
+========================================================== */
+
+.hero-card{
+
+    background:white;
+
+    border-radius:30px;
+
+    padding:45px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:40px;
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:40px;
+
+}
+
+
+.hero-image{
+
+    width:240px;
+
+}
+
+
+/* ==========================================================
+   Buttons
+========================================================== */
+
+.primary-button{
+
+    display:inline-block;
+
+    padding:15px 28px;
+
+    background:var(--primary);
+
+    color:white;
+
+    border:none;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+    font-weight:700;
+
+}
+
+
+.primary-button:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-2px);
+
+}
+
+
+.secondary-button{
+
+    display:inline-block;
+
+    padding:15px 28px;
+
+    border-radius:15px;
+
+    background:white;
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+    font-weight:700;
+
+}
+
+
+.secondary-button:hover{
+
+    background:var(--primary-light);
+
+}
+
+
+/* ==========================================================
+   Forms
+========================================================== */
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+
+input,
+
+select,
+
+textarea{
+
+    width:100%;
+
+    padding:16px;
+
+    border-radius:16px;
+
+    border:1px solid var(--border);
+
+    font-size:1rem;
+
+    font-family:'Inter',sans-serif;
+
+    transition:var(--transition);
+
+}
+
+
+input:focus,
+
+textarea:focus,
+
+select:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(99,200,217,.18);
+
+}
+
+
+/* ==========================================================
+   Flash Messages
+========================================================== */
+
+.flash-container{
+
+    max-width:1200px;
+
+    margin:25px auto;
+
+}
+
+
+.flash-message{
+
+    padding:16px 20px;
+
+    background:var(--primary-light);
+
+    color:var(--text);
+
+    border-radius:14px;
+
+    margin-bottom:15px;
+
+}
+
+
+/* ==========================================================
+   Footer
+========================================================== */
 
 footer{
-text-align:center;
-padding:40px;
-margin-top:80px;
-}
 
-input{
+    margin-top:80px;
 
-width:100%;
+    background:white;
 
-padding:14px;
+    padding:60px 30px;
 
-border-radius:12px;
-
-border:1px solid #ddd;
-
-margin-bottom:20px;
+    border-top:1px solid var(--border);
 
 }
 
-button{
 
-background:#63C8D9;
+.footer-content{
 
-color:white;
+    max-width:1200px;
 
-padding:12px 25px;
+    margin:auto;
 
-border:none;
+    display:grid;
 
-border-radius:12px;
+    grid-template-columns:2fr 1fr 1fr;
 
-cursor:pointer;
+    gap:50px;
+
+}
+
+
+.footer-content h4{
+
+    margin-bottom:15px;
 
 }
 
-button:hover{
 
-opacity:.9;
+.footer-content ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
 
 }
+
+
+.footer-content a{
+
+    color:var(--text-light);
+
+    transition:var(--transition);
+
+}
+
+
+.footer-content a:hover{
+
+    color:var(--primary);
+
+}
+
+
+.socials{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+
+.copyright{
+
+    text-align:center;
+
+    margin-top:40px;
+
+    color:var(--text-light);
+
+}
+
+
+/* ==========================================================
+   Sections
+========================================================== */
+
+.section-title{
+
+    margin:50px 0 25px;
+
+}
+
+
+/* ==========================================================
+   Utilities
+========================================================== */
+
+.center{
+
+    text-align:center;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+.mt-1{margin-top:10px;}
+.mt-2{margin-top:20px;}
+.mt-3{margin-top:30px;}
+.mt-4{margin-top:40px;}
+
+.mb-1{margin-bottom:10px;}
+.mb-2{margin-bottom:20px;}
+.mb-3{margin-bottom:30px;}
+.mb-4{margin-bottom:40px;}
+
+
+/* ==========================================================
+   Scrollbar
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#EDF5F7;
+
+}
+/* ==========================================================
+   Dashboard
+========================================================== */
+
+.dashboard{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:35px;
+
+}
+
+/* ==========================================================
+   Dashboard Grid
+========================================================== */
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:25px;
+
+}
+
+/* ==========================================================
+   Generic Cards
+========================================================== */
 
 .card{
 
-transition:.3s;
+    background:var(--surface);
+
+    border-radius:var(--radius);
+
+    padding:28px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
 
 }
 
 .card:hover{
 
-transform:translateY(-4px);
+    transform:translateY(-5px);
+
+    box-shadow:var(--shadow-hover);
 
 }
 
-.timeline {
+.card h1{
 
-    margin-top:40px;
+    margin:0;
 
-}
-
-.timeline-item {
-
-    background:white;
-
-    padding:20px;
-
-    border-left:6px solid #63C8D9;
-
-    margin-bottom:20px;
-
-    border-radius:10px;
+    color:var(--primary);
 
 }
 
-.badge {
+.card h2{
 
-    background:#DDF8F9;
+    margin:0;
 
-    color:#2F3C48;
+}
 
-    padding:6px 14px;
+.card p{
+
+    margin:0;
+
+}
+
+/* ==========================================================
+   Dashboard Hero
+========================================================== */
+
+.hero-card{
+
+    background:linear-gradient(
+        135deg,
+        #FFFFFF,
+        #F2FCFD
+    );
+
+}
+
+.hero-card h1{
+
+    color:var(--text);
+
+}
+
+.hero-card p{
+
+    max-width:650px;
+
+}
+
+/* ==========================================================
+   XP Progress
+========================================================== */
+
+.xp-bar{
+
+    width:100%;
+
+    height:16px;
+
+    background:#EAF5F8;
 
     border-radius:20px;
 
-    display:inline-block;
+    overflow:hidden;
 
     margin-top:10px;
 
 }
+
+.xp-fill{
+
+    height:100%;
+
+    width:0%;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    border-radius:20px;
+
+    transition:1s;
+
+}
+
+/* ==========================================================
+   Streak Card
+========================================================== */
+
+.streak{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+}
+
+.streak-number{
+
+    font-size:3rem;
+
+    color:#FF8A00;
+
+    font-weight:700;
+
+}
+
+/* ==========================================================
+   Article Cards
+========================================================== */
+
+.article-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.article-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.article-card h2{
+
+    font-size:1.35rem;
+
+    line-height:1.3;
+
+}
+
+.article-card p{
+
+    flex:1;
+
+}
+
+.article-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    color:var(--text-light);
+
+    font-size:.95rem;
+
+}
+
+/* ==========================================================
+   Category Badge
+========================================================== */
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:fit-content;
+
+    padding:8px 14px;
+
+    background:var(--primary-light);
+
+    color:var(--primary-dark);
+
+    border-radius:30px;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+}
+
+/* ==========================================================
+   Daily Tip
+========================================================== */
+
+#daily-tip{
+
+    font-size:1rem;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================================
+   Daily Challenge
+========================================================== */
+
+.challenge-card{
+
+    background:linear-gradient(
+        135deg,
+        #FFF9ED,
+        #FFFFFF
+    );
+
+    border-left:6px solid var(--warning);
+
+}
+
+.challenge-card h3{
+
+    color:#CC8900;
+
+}
+
+/* ==========================================================
+   Weekly Progress
+========================================================== */
+
+.week-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    gap:12px;
+
+}
+
+.week-grid div{
+
+    background:var(--primary-light);
+
+    border-radius:15px;
+
+    text-align:center;
+
+    padding:16px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.week-grid div:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ==========================================================
+   Badges
+========================================================== */
+
+.badges-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
+
+    gap:18px;
+
+}
+
+.badge-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:12px;
+
+    transition:var(--transition);
+
+}
+
+.badge-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.badge-icon{
+
+    font-size:2.4rem;
+
+}
+
+.badge-name{
+
+    font-weight:600;
+
+    text-align:center;
+
+    font-size:.9rem;
+
+}
+
+/* ==========================================================
+   Timeline
+========================================================== */
+
+.timeline{
+
+    position:relative;
+
+    margin-top:15px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:16px;
+
+    top:0;
+
+    bottom:0;
+
+    width:4px;
+
+    background:var(--primary-light);
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    padding-left:50px;
+
+}
+
+.timeline-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:7px;
+
+    top:6px;
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+}
+
+.timeline-item.completed::before{
+
+    background:var(--success);
+
+}
+
+.timeline-item.current::before{
+
+    background:var(--warning);
+
+}
+
+.timeline-title{
+
+    font-weight:700;
+
+}
+
+.timeline-text{
+
+    color:var(--text-light);
+
+    font-size:.95rem;
+
+}
+
+/* ==========================================================
+   Achievement Banner
+========================================================== */
+
+.achievement-banner{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:white;
+
+    border-radius:28px;
+
+    padding:35px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+.achievement-banner h2{
+
+    color:white;
+
+    margin-bottom:10px;
+
+}
+
+.achievement-banner p{
+
+    color:white;
+
+}
+
+/* ==========================================================
+   Mascot Message
+========================================================== */
+
+.mascot-message{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.mascot-message img{
+
+    width:90px;
+
+}
+
+.mascot-message h3{
+
+    margin-bottom:6px;
+
+}
+
+/* ==========================================================
+   Reward Popup
+========================================================== */
+
+.reward-popup{
+
+    position:fixed;
+
+    top:30px;
+
+    right:30px;
+
+    background:var(--success);
+
+    color:white;
+
+    padding:16px 28px;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
+    opacity:0;
+
+    transform:translateY(-30px);
+
+    transition:.4s;
+
+    z-index:999;
+
+    font-weight:700;
+
+}
+
+.reward-popup.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ==========================================================
+   Floating Animation
+========================================================== */
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.hero-image{
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+/* ==========================================================
+   Fade Animation
+========================================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+.card,
+.article-card,
+.hero-card{
+
+    animation:fadeUp .6s ease;
+
+}
+/* ==========================================================
+   Onboarding
+========================================================== */
+
+.onboarding{
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+.onboarding-card{
+
+    background:var(--surface);
+
+    border-radius:32px;
+
+    padding:45px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.onboarding-progress{
+
+    height:12px;
+
+    background:#EAF5F8;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    margin-bottom:35px;
+
+}
+
+.onboarding-progress-fill{
+
+    height:100%;
+
+    width:33%;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+}
+
+
+/* ==========================================================
+   Child Profile
+========================================================== */
+
+.child-profile{
+
+    display:grid;
+
+    grid-template-columns:280px 1fr;
+
+    gap:35px;
+
+}
+
+.child-avatar{
+
+    width:170px;
+
+    height:170px;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    object-fit:cover;
+
+    box-shadow:var(--shadow);
+
+}
+
+.child-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.info-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    background:#FAFCFD;
+
+}
+
+
+/* ==========================================================
+   Milestones
+========================================================== */
+
+.milestone-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:24px;
+
+    margin-bottom:22px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.milestone-card:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.milestone-age{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    font-size:1.1rem;
+
+}
+
+.milestone-status{
+
+    display:inline-block;
+
+    margin-top:12px;
+
+    padding:7px 14px;
+
+    border-radius:25px;
+
+    background:var(--secondary-light);
+
+    color:var(--success);
+
+    font-weight:600;
+
+}
+
+
+/* ==========================================================
+   Quiz
+========================================================== */
+
+.quiz-container{
+
+    max-width:850px;
+
+    margin:auto;
+
+}
+
+.quiz-card{
+
+    background:white;
+
+    border-radius:28px;
+
+    padding:45px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.quiz-question{
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+    margin-bottom:35px;
+
+}
+
+.quiz-option{
+
+    padding:18px;
+
+    border-radius:18px;
+
+    border:2px solid var(--border);
+
+    margin-bottom:15px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.quiz-option:hover{
+
+    border-color:var(--primary);
+
+    background:var(--primary-light);
+
+}
+
+.quiz-option.correct{
+
+    background:#EAF8EE;
+
+    border-color:var(--success);
+
+}
+
+.quiz-option.wrong{
+
+    background:#FDEEEE;
+
+    border-color:var(--danger);
+
+}
+
+.quiz-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:35px;
+
+}
+
+
+/* ==========================================================
+   Progress Circle
+========================================================== */
+
+.progress-circle{
+
+    width:170px;
+
+    height:170px;
+
+    border-radius:50%;
+
+    background:conic-gradient(
+
+        var(--primary) 75%,
+
+        #EAF5F8 0
+
+    );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto;
+
+}
+
+.progress-circle-inner{
+
+    width:130px;
+
+    height:130px;
+
+    border-radius:50%;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:2rem;
+
+    font-weight:700;
+
+}
+
+
+/* ==========================================================
+   Achievement Cards
+========================================================== */
+
+.achievement-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+}
+
+.achievement-card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+.achievement-card h2{
+
+    font-size:3rem;
+
+}
+
+.achievement-card p{
+
+    margin-top:10px;
+
+}
+
+
+/* ==========================================================
+   Statistics
+========================================================== */
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+.stat-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+}
+
+.stat-card h1{
+
+    color:var(--primary);
+
+}
+
+
+/* ==========================================================
+   Empty State
+========================================================== */
+
+.empty-state{
+
+    text-align:center;
+
+    padding:80px 30px;
+
+}
+
+.empty-state img{
+
+    width:220px;
+
+    margin:auto;
+
+    margin-bottom:30px;
+
+}
+
+.empty-state h2{
+
+    margin-bottom:15px;
+
+}
+
+
+/* ==========================================================
+   Search Bar
+========================================================== */
+
+.search{
+
+    position:relative;
+
+    margin-bottom:35px;
+
+}
+
+.search input{
+
+    padding-left:50px;
+
+}
+
+.search-icon{
+
+    position:absolute;
+
+    left:18px;
+
+    top:18px;
+
+    color:var(--text-light);
+
+}
+
+
+/* ==========================================================
+   Chips
+========================================================== */
+
+.chips{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+}
+
+.chip{
+
+    padding:10px 18px;
+
+    background:white;
+
+    border-radius:30px;
+
+    border:1px solid var(--border);
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.chip:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.chip.active{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+/* ==========================================================
+   Tables
+========================================================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+}
+
+th{
+
+    background:var(--primary-light);
+
+    padding:18px;
+
+    text-align:left;
+
+}
+
+td{
+
+    padding:18px;
+
+    border-top:1px solid var(--border);
+
+}
+
+
+/* ==========================================================
+   Loading Skeleton
+========================================================== */
+
+.skeleton{
+
+    height:22px;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        #F2F5F6,
+
+        #FFFFFF,
+
+        #F2F5F6
+
+    );
+
+    background-size:300%;
+
+    animation:skeleton 1.5s infinite;
+
+}
+
+@keyframes skeleton{
+
+    from{
+
+        background-position:0;
+
+    }
+
+    to{
+
+        background-position:300%;
+
+    }
+
+}
+
+
+/* ==========================================================
+   Fade Utilities
+========================================================== */
+
+.fade{
+
+    animation:fadeUp .6s ease;
+
+}
+
+.fade-delay{
+
+    animation:fadeUp .9s ease;
+
+}
+
+
+/* ==========================================================
+   Hover Scale
+========================================================== */
+
+.scale{
+
+    transition:var(--transition);
+
+}
+
+.scale:hover{
+
+    transform:scale(1.03);
+
+}
+
+
+/* ==========================================================
+   Glass Card
+========================================================== */
+
+.glass{
+
+    backdrop-filter:blur(10px);
+
+    background:rgba(255,255,255,.65);
+
+}
+
+
+/* ==========================================================
+   Divider
+========================================================== */
+
+.divider{
+
+    width:100%;
+
+    height:1px;
+
+    background:var(--border);
+
+    margin:25px 0;
+
+}
+/* ==========================================================
+   Alexandria Design System
+   Part C4 - Responsive & Final Polish
+========================================================== */
+
+
+/* ==========================================================
+   Smooth Scrolling
+========================================================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+/* ==========================================================
+   Selection
+========================================================== */
+
+::selection{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+/* ==========================================================
+   Better Focus (Accessibility)
+========================================================== */
+
+button:focus,
+input:focus,
+textarea:focus,
+select:focus,
+a:focus{
+
+    outline:3px solid rgba(99,200,217,.35);
+
+    outline-offset:4px;
+
+}
+
+
+/* ==========================================================
+   Disabled Buttons
+========================================================== */
+
+button:disabled,
+.primary-button:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+}
+
+
+/* ==========================================================
+   Images
+========================================================== */
+
+img{
+
+    user-select:none;
+
+}
+
+
+/* ==========================================================
+   Nice Hover for Links
+========================================================== */
+
+a{
+
+    transition:.25s;
+
+}
+
+a:hover{
+
+    opacity:.95;
+
+}
+
+
+/* ==========================================================
+   Mobile Navigation
+========================================================== */
+
+.mobile-nav{
+
+    display:none;
+
+}
+
+
+/* ==========================================================
+   Small Floating Shadow
+========================================================== */
+
+.shadow-hover:hover{
+
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+}
+
+
+/* ==========================================================
+   Card Ripple Effect
+========================================================== */
+
+.card,
+.article-card{
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.card::after,
+.article-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:0;
+
+    background:rgba(99,200,217,.08);
+
+    border-radius:50%;
+
+    transition:.5s;
+
+}
+
+.card:hover::after,
+.article-card:hover::after{
+
+    width:600px;
+
+    height:600px;
+
+}
+
+
+/* ==========================================================
+   Tablet
+========================================================== */
+
+@media(max-width:1100px){
+
+.hero-card{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.hero-image{
+
+    width:180px;
+
+}
+
+.footer-content{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+.child-profile{
+
+    grid-template-columns:1fr;
+
+}
+
+.dashboard-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+/* ==========================================================
+   Large Phones
+========================================================== */
+
+@media(max-width:850px){
+
+.navbar{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.nav-links{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.dashboard-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.week-grid{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+.page{
+
+    padding:25px;
+
+}
+
+.hero-card{
+
+    padding:35px;
+
+}
+
+.hero-card h1{
+
+    font-size:2.3rem;
+
+}
+
+.hero-card p{
+
+    font-size:1rem;
+
+}
+
+.footer-content{
+
+    gap:35px;
+
+}
+
+}
+
+
+/* ==========================================================
+   Mobile
+========================================================== */
+
+@media(max-width:600px){
+
+body{
+
+    font-size:15px;
+
+}
+
+.page{
+
+    padding:20px;
+
+}
+
+.nav-links{
+
+    display:none;
+
+}
+
+.mobile-nav{
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    position:fixed;
+
+    bottom:20px;
+
+    left:20px;
+
+    right:20px;
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:16px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+    z-index:999;
+
+}
+
+.mobile-nav a{
+
+    font-size:1.5rem;
+
+}
+
+.hero-card{
+
+    padding:28px;
+
+}
+
+.hero-card h1{
+
+    font-size:2rem;
+
+}
+
+h1{
+
+    font-size:2.2rem;
+
+}
+
+h2{
+
+    font-size:1.6rem;
+
+}
+
+.card{
+
+    padding:22px;
+
+}
+
+.article-card{
+
+    padding:22px;
+
+}
+
+.quiz-card{
+
+    padding:25px;
+
+}
+
+.onboarding-card{
+
+    padding:30px;
+
+}
+
+.child-avatar{
+
+    width:130px;
+
+    height:130px;
+
+}
+
+.progress-circle{
+
+    width:130px;
+
+    height:130px;
+
+}
+
+.progress-circle-inner{
+
+    width:95px;
+
+    height:95px;
+
+    font-size:1.4rem;
+
+}
+
+.week-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.badges-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.reward-popup{
+
+    left:20px;
+
+    right:20px;
+
+    top:20px;
+
+    text-align:center;
+
+}
+
+}
+
+
+/* ==========================================================
+   Very Small Devices
+========================================================== */
+
+@media(max-width:380px){
+
+.page{
+
+    padding:15px;
+
+}
+
+.hero-card{
+
+    padding:22px;
+
+}
+
+.primary-button{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+.secondary-button{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+.card{
+
+    padding:18px;
+
+}
+
+.article-card{
+
+    padding:18px;
+
+}
+
+.logo{
+
+    width:48px;
+
+}
+
+}
+
+
+/* ==========================================================
+   Simple Fade-In
+========================================================== */
+
+.fade-in{
+
+    animation:fadeIn .8s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+/* ==========================================================
+   Lift Animation
+========================================================== */
+
+.lift{
+
+    transition:.25s;
+
+}
+
+.lift:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+/* ==========================================================
+   Pulse Animation
+========================================================== */
+
+.pulse{
+
+    animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.03);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+/* ==========================================================
+   Success Color Helper
+========================================================== */
+
+.success{
+
+    color:var(--success);
+
+}
+
+
+/* ==========================================================
+   Warning Color Helper
+========================================================== */
+
+.warning{
+
+    color:var(--warning);
+
+}
+
+
+/* ==========================================================
+   Danger Color Helper
+========================================================== */
+
+.danger{
+
+    color:var(--danger);
+
+}
+
+
+/* ==========================================================
+   Text Helpers
+========================================================== */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-right{
+
+    text-align:right;
+
+}
+
+.bold{
+
+    font-weight:700;
+
+}
+
+.round{
+
+    border-radius:999px;
+
+}
+
+
+/* ==========================================================
+   Margin Helpers
+========================================================== */
+
+.m-1{margin:10px;}
+.m-2{margin:20px;}
+.m-3{margin:30px;}
+
+.p-1{padding:10px;}
+.p-2{padding:20px;}
+.p-3{padding:30px;}
+
+
+/* ==========================================================
+   End of Alexandria Design System
+========================================================== */
