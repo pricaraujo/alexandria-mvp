@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>
+
+{{ article.title }}
+
+</h1>
+
+<p>
+
+<b>Category:</b>
+
+{{ article.category }}
+
+</p>
+
+<p>
+
+{{ article.content }}
+
+</p>
+
+<br>
+
+<button id="complete">
+
+Complete Reading (+XP)
+
+</button>
+
+{% endblock %}

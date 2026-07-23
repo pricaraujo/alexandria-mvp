@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>{{ child.name }}</h1>
+
+<div class="card">
+
+<h2>Current Age</h2>
+
+<p>{{ child.age }}</p>
+
+</div>
+
+<div class="card">
+
+<h2>Today's Journey</h2>
+
+<p>
+
+Today's recommendations have been personalized for your child's age.
+
+</p>
+
+</div>
+
+<a href="/milestones" class="button">
+
+View Development Journey
+
+</a>
+
+{% endblock %}

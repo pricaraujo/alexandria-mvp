@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Recommended Articles</h1>
+
+<form>
+
+<input
+name="search"
+placeholder="Search articles...">
+
+<button>
+
+Search
+
+</button>
+
+</form>
+
+{% for article in articles %}
+
+<div class="card">
+
+<h2>
+
+{{ article.title }}
+
+</h2>
+
+<p>
+
+{{ article.summary }}
+
+</p>
+
+<p>
+
+📖 {{ article.reading_time }} min
+
+</p>
+
+<p>
+
+⭐ {{ article.xp }} XP
+
+</p>
+
+<a href="/articles/{{article.id}}">
+
+Read Article
+
+</a>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}

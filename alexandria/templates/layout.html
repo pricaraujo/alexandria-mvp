@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Alexandria</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+
+Alexandria
+
+</div>
+
+<div>
+
+<a href="/">Home</a>
+
+<a href="/dashboard">Dashboard</a>
+
+<a href="/onboarding">Get Started</a>
+
+</div>
+
+</nav>
+
+{% block content %}
+
+{% endblock %}
+
+<footer>
+
+Made with ❤️ for parents.
+
+</footer>
+
+</body>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</html>

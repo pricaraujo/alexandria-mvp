@@ -1,0 +1,133 @@
+body{
+font-family:Arial,sans-serif;
+margin:0;
+background:#F7FCFD;
+color:#2F3C48;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 40px;
+background:white;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:#2F3C48;
+}
+
+.hero{
+padding:100px;
+text-align:center;
+}
+
+.button{
+background:#63C8D9;
+padding:15px 30px;
+border-radius:12px;
+color:white;
+text-decoration:none;
+display:inline-block;
+margin-top:25px;
+}
+
+.card{
+background:white;
+margin:20px;
+padding:25px;
+border-radius:18px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+footer{
+text-align:center;
+padding:40px;
+margin-top:80px;
+}
+
+input{
+
+width:100%;
+
+padding:14px;
+
+border-radius:12px;
+
+border:1px solid #ddd;
+
+margin-bottom:20px;
+
+}
+
+button{
+
+background:#63C8D9;
+
+color:white;
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+}
+
+button:hover{
+
+opacity:.9;
+
+}
+
+.card{
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-4px);
+
+}
+
+.timeline {
+
+    margin-top:40px;
+
+}
+
+.timeline-item {
+
+    background:white;
+
+    padding:20px;
+
+    border-left:6px solid #63C8D9;
+
+    margin-bottom:20px;
+
+    border-radius:10px;
+
+}
+
+.badge {
+
+    background:#DDF8F9;
+
+    color:#2F3C48;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    display:inline-block;
+
+    margin-top:10px;
+
+}

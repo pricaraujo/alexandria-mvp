@@ -1,0 +1,46 @@
+[
+    {
+        "id":1,
+        "title":"Helping Your Baby Sleep",
+        "summary":"Healthy sleep habits begin early.",
+        "category":"Sleep",
+        "age_min":0,
+        "age_max":180,
+        "reading_time":5,
+        "xp":20,
+        "content":"Newborn sleep patterns are different from adults. Frequent waking is normal..."
+    },
+    {
+        "id":2,
+        "title":"Understanding Baby Crying",
+        "summary":"Why babies cry and how to respond.",
+        "category":"Development",
+        "age_min":0,
+        "age_max":365,
+        "reading_time":6,
+        "xp":20,
+        "content":"Crying is your baby's first form of communication..."
+    },
+    {
+        "id":3,
+        "title":"Starting Solid Foods",
+        "summary":"Introducing solids safely.",
+        "category":"Nutrition",
+        "age_min":180,
+        "age_max":365,
+        "reading_time":8,
+        "xp":25,
+        "content":"Around six months many babies are ready to explore solid foods..."
+    },
+    {
+        "id":4,
+        "title":"The Importance of Play",
+        "summary":"Play supports brain development.",
+        "category":"Development",
+        "age_min":30,
+        "age_max":2190,
+        "reading_time":4,
+        "xp":15,
+        "content":"Simple games and interaction strengthen your child's development..."
+    }
+]

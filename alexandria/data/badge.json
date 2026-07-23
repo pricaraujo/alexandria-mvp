@@ -1,0 +1,32 @@
+[
+{
+"id":1,
+"name":"First Steps",
+"description":"Read your first article.",
+"icon":"📖"
+},
+{
+"id":2,
+"name":"Knowledge Explorer",
+"description":"Read five articles.",
+"icon":"🧠"
+},
+{
+"id":3,
+"name":"Quiz Hero",
+"description":"Answer ten quiz questions correctly.",
+"icon":"🏆"
+},
+{
+"id":4,
+"name":"Weekly Streak",
+"description":"Use Alexandria for seven days.",
+"icon":"🔥"
+},
+{
+"id":5,
+"name":"Growth Companion",
+"description":"Complete your first milestone.",
+"icon":"🌱"
+}
+]

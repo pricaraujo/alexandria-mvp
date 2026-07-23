@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "title": "Makes Eye Contact",
+        "description": "Begins looking at faces and following movement.",
+        "category": "Social",
+        "age_min": 0,
+        "age_max": 60
+    },
+    {
+        "id": 2,
+        "title": "Smiles Responsively",
+        "description": "Smiles back when someone smiles.",
+        "category": "Social",
+        "age_min": 30,
+        "age_max": 90
+    },
+    {
+        "id": 3,
+        "title": "Rolls Over",
+        "description": "Begins rolling from tummy to back.",
+        "category": "Motor",
+        "age_min": 120,
+        "age_max": 210
+    },
+    {
+        "id": 4,
+        "title": "Sits Without Support",
+        "description": "Can sit independently.",
+        "category": "Motor",
+        "age_min": 180,
+        "age_max": 270
+    },
+    {
+        "id": 5,
+        "title": "First Words",
+        "description": "Begins speaking simple words.",
+        "category": "Language",
+        "age_min": 300,
+        "age_max": 450
+    },
+    {
+        "id": 6,
+        "title": "Walks Independently",
+        "description": "Starts walking without support.",
+        "category": "Motor",
+        "age_min": 365,
+        "age_max": 540
+    }
+]
