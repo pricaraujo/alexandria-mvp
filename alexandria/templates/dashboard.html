@@ -1,59 +1,366 @@
 {% extends "layout.html" %}
 
+{% block title %}
+Dashboard
+{% endblock %}
+
 {% block content %}
 
-<h2>
+<section class="dashboard">
 
-Welcome 👋
+    <!-- ===================================== -->
+    <!-- Welcome -->
+    <!-- ===================================== -->
 
-</h2>
+    <div class="hero-card">
 
-<div class="card">
+        <div>
 
-<h3>
+            <h1>
 
-Today's Tip
+                Good Morning 👋
 
-</h3>
+            </h1>
 
-<p>
+            <p>
 
-Your baby may begin tracking faces around 2 months.
+                Welcome back to Alexandria.
 
-</p>
+                You're doing a wonderful job supporting your child's development.
 
-</div>
+            </p>
 
-<div class="card">
+        </div>
 
-<h3>
+        <img
+            src="{{ url_for('static', filename='img/mascot.png') }}"
+            class="hero-image">
 
-Level
+    </div>
 
-</h3>
+    <!-- ===================================== -->
+    <!-- Child Summary -->
+    <!-- ===================================== -->
 
-<p>
+    <div class="dashboard-grid">
 
-1
+        <div class="card">
 
-</p>
+            <h3>
 
-</div>
+                👶 My Child
 
-<div class="card">
+            </h3>
 
-<h3>
+            <h2>
 
-XP
+                {{ child.name }}
 
-</h3>
+            </h2>
 
-<p>
+            <p>
 
-0 / 100
+                {{ child.age }}
 
-</p>
+            </p>
 
-</div>
+            <br>
+
+            <a
+                href="/child"
+                class="primary-button">
+
+                View Profile
+
+            </a>
+
+        </div>
+
+        <!-- ================================ -->
+
+        <div class="card">
+
+            <h3>
+
+                ⭐ Current Level
+
+            </h3>
+
+            <h1>
+
+                {{ user.level }}
+
+            </h1>
+
+            <p>
+
+                {{ user.xp }} XP
+
+            </p>
+
+            <div class="xp-bar">
+
+                <div
+                    class="xp-fill"
+                    style="width: {{ progress }}%;">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================================ -->
+
+        <div class="card">
+
+            <h3>
+
+                🔥 Current Streak
+
+            </h3>
+
+            <h1>
+
+                {{ user.streak }}
+
+            </h1>
+
+            <p>
+
+                Keep learning every day.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================== -->
+    <!-- Today's Journey -->
+    <!-- ===================================== -->
+
+    <h2 class="section-title">
+
+        Today's Journey
+
+    </h2>
+
+    <div class="dashboard-grid">
+
+        <!-- Daily Tip -->
+
+        <div class="card">
+
+            <h3>
+
+                💡 Daily Tip
+
+            </h3>
+
+            <p id="daily-tip">
+
+                Loading today's recommendation...
+
+            </p>
+
+        </div>
+
+        <!-- Challenge -->
+
+        <div class="card">
+
+            <h3>
+
+                🎯 Daily Challenge
+
+            </h3>
+
+            <p id="challenge">
+
+                Loading...
+
+            </p>
+
+        </div>
+
+        <!-- Journey -->
+
+        <div class="card">
+
+            <h3>
+
+                🌱 Development Journey
+
+            </h3>
+
+            <ul>
+
+                {% for milestone in recommended %}
+
+                <li>
+
+                    {{ milestone.title }}
+
+                </li>
+
+                {% endfor %}
+
+            </ul>
+
+            <br>
+
+            <a
+                href="/milestones"
+                class="primary-button">
+
+                Explore Journey
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================== -->
+    <!-- Continue Reading -->
+    <!-- ===================================== -->
+
+    <h2 class="section-title">
+
+        Continue Learning
+
+    </h2>
+
+    <div class="dashboard-grid">
+
+        {% for article in articles[:3] %}
+
+        <div class="article-card">
+
+            <div class="badge">
+
+                {{ article.category }}
+
+            </div>
+
+            <h2>
+
+                {{ article.title }}
+
+            </h2>
+
+            <p>
+
+                {{ article.summary }}
+
+            </p>
+
+            <div class="article-footer">
+
+                <span>
+
+                    📖 {{ article.reading_time }} min
+
+                </span>
+
+                <span>
+
+                    ⭐ {{ article.xp }}
+
+                </span>
+
+            </div>
+
+            <a
+                href="/articles/{{ article.id }}"
+                class="primary-button">
+
+                Read Article
+
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <!-- ===================================== -->
+    <!-- Achievements -->
+    <!-- ===================================== -->
+
+    <h2 class="section-title">
+
+        Achievements
+
+    </h2>
+
+    <div
+        id="badges"
+        class="badges-grid">
+
+    </div>
+
+    <!-- ===================================== -->
+    <!-- Weekly Progress -->
+    <!-- ===================================== -->
+
+    <h2 class="section-title">
+
+        Weekly Progress
+
+    </h2>
+
+    <div class="card">
+
+        <div class="week-grid">
+
+            <div>Mon ✓</div>
+
+            <div>Tue ✓</div>
+
+            <div>Wed ✓</div>
+
+            <div>Thu ○</div>
+
+            <div>Fri ○</div>
+
+            <div>Sat ○</div>
+
+            <div>Sun ○</div>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================== -->
+    <!-- Encouragement -->
+    <!-- ===================================== -->
+
+    <div class="hero-card">
+
+        <div>
+
+            <h2>
+
+                ❤️ Remember
+
+            </h2>
+
+            <p>
+
+                Parenting isn't about perfection.
+
+                Every small moment of care, learning,
+                and connection helps your child grow.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
 {% endblock %}
